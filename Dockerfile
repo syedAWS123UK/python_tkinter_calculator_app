@@ -1,7 +1,6 @@
-FROM python:3.9 alpine
-WORKDIR /app/backend
-COPY requirements.txt /app/backend
+FROM python:3.9 -alpine
+COPY requirements.txt
 RUN pip install -r requirements.txt
-COPY . /app/backend
-EXPOSE 8000
-CMD python /app/backend/Calculator_syedahmed.py runserver 0.0.0.0:8000
+COPY . .
+EXPOSE 8001
+CMD ["python", "syeds_Calculator_.py", "runserver", 0.0.0.0:8001]
